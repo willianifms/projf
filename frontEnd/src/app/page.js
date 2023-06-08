@@ -13,11 +13,11 @@ export default async function Home() {
 
       {produtos.map(produtos => (
         <div key={produtos.id}>
-            <p>{produto.titulo}</p>
-            <p>{produto.data_cadastro}</p>
-            <p>{produto.preco}</p>
-            <p>{produto.descricao}</p>
-            <p>{produto.img}</p>
+            <p>{produtos.titulo}</p>
+            <p>{produtos.data_cadastro}</p>
+            <p>{produtos.preco}</p>
+            <p>{produtos.descricao}</p>
+            <p>{produtos.img}</p>
           <Link href={`/produto/${produtos.id}`}>ver mais</Link>
         </div>
       ))}
