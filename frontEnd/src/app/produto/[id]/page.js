@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default async function Produto({ params }) {
     const router = useRouter();
@@ -15,7 +16,6 @@ export default async function Produto({ params }) {
         body: idJson
     })
     const produto = await req.json();
-
 
     const remover = () => {
         console.log(idJson)
@@ -37,8 +37,7 @@ export default async function Produto({ params }) {
             <p>{produto.preco}</p>
             <p>{produto.descricao}</p>
             <p>{produto.img}</p>
-            <button onClick={e => e.preventDefault(remover())}>REMOVER</button>
-
+            <button onClick={remover}>Excluir</button>
         </div>
 
     )

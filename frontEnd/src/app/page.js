@@ -8,6 +8,7 @@ export default async function Home() {
   });
   const produtos = await req.json();
 
+
   return (
     <main> <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
 
@@ -19,8 +20,10 @@ export default async function Home() {
             <p>{produtos.descricao}</p>
             <p>{produtos.img}</p>
           <Link href={`/produto/${produtos.id}`}>ver mais</Link>
+          
         </div>
       ))}
     </main>
   )
 }
+
