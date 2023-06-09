@@ -20,6 +20,7 @@ export default async function Produto({ params }) {
     const remover = () => {
         console.log(idJson)
         try {
+            alert("Tem certeza de que quer excluir esse produto permanentemente?")
             fetch("http://localhost:3003/produtos", {
                 method: "DELETE",
                 headers: { 'content-type': 'application/json' },
@@ -30,6 +31,8 @@ export default async function Produto({ params }) {
             alert("Ocorreu um erro" + error)
         }
     }
+
+
     return (
         <div>
             <p>{produto.titulo}</p>
@@ -38,6 +41,7 @@ export default async function Produto({ params }) {
             <p>{produto.descricao}</p>
             <p>{produto.img}</p>
             <button onClick={remover}>Excluir</button>
+            <a href="../">Voltar</a>
         </div>
 
     )
