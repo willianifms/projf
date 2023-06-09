@@ -17,7 +17,7 @@ export default function Cadastro() {
         const produto = {
             titulo: titulo,
             data_cadastro: data_cadastro,
-           preco: preco,
+            preco: preco,
             descricao: descricao,
             img: img
         }
@@ -31,7 +31,7 @@ export default function Cadastro() {
 
     return (
         <div className={styles.main}>
-            <form  onSubmit={cadastrar}>
+            <form onSubmit={cadastrar}>
                 <input
                     type="text"
                     placeholder='titulo:'

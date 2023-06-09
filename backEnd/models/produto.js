@@ -25,12 +25,12 @@ class Produto {
   static async insert(data) {
     try {
       const connect = await db.connect();
-      const sql = "INSERT INTO produtos(titulo, data_cadastro, preco, descricao, img) VALUES ($1, $2, $3, $4, $5) RETURNING id, titulo, data_cadastro, preco, descricao, img;";
-      const values = [data.titulo, data.data_cadastro, data.preco, data.descricao,data.img];
+      const sql = "INSERT INTO produtos(titulo, data_cadastro, preco, descricao, imagem) VALUES ($1, $2, $3, $4, $5) RETURNING id, titulo, data_cadastro, preco, descricao, imagem;";
+      const values = [data.titulo, data.data_cadastro, data.preco, data.descricao, data.imagem];
       return await connect.query(sql, values);
     } catch (error) {
       console.error('Erro em insert:', error);
-      throw error;
+      throw error ;
     }
   }
 
@@ -38,7 +38,7 @@ class Produto {
     try {
       const connect = await db.connect();
       const sql = "";
-      const values = [data.titulo, data.data_cadastro, data.preco, data.descricao,data.img, id];
+      const values = [data.titulo, data.data_cadastro, data.preco, data.descricao,data.imagem, id];
       return await connect.query(sql, values);
     } catch (error) {
       console.error('Erro em update:', error);
