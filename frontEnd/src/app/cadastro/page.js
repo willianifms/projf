@@ -9,7 +9,7 @@ export default function Cadastro() {
     const [data_cadastro, setData_cadastro] = useState();
     const [preco, setPreco] = useState();
     const [descricao, setDescricao] = useState();
-    const [img, setImg] = useState();
+    const [imagem, setimagem] = useState();
 
     const cadastrar = (e) => {
         e.preventDefault()
@@ -19,7 +19,7 @@ export default function Cadastro() {
             data_cadastro: data_cadastro,
             preco: preco,
             descricao: descricao,
-            img: img
+            imagem: imagem
         }
         const produtoJson = JSON.stringify(produto);
         fetch("http://localhost:3003/produto", {
@@ -38,18 +38,30 @@ export default function Cadastro() {
                     nome="titulo"
                     onChange={e => setTitulo(e.target.value)}
                 /><br/>
-                <input
-                    type="text"
-                    placeholder='Data:'
-                    nome="data_cadastro"
-                    onChange={e => setData_cadastro(e.target.value)}
-                /><br/>
-                <input
-                    type="text"
-                    placeholder='Preço:'
-                    nome="preco"
-                    onChange={e => setPreco(e.target.value)}
-                /><br/>
+<input
+  type="text"
+  placeholder="Data:"
+  name="data_cadastro"
+  onChange={e => {
+    const value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    setData_cadastro(value);
+  }}
+/><br/>
+
+<input
+  type="text"
+  placeholder="Preço:"
+  name="preco"
+  pattern="^\d+(.|,)?\d{0,2}$"
+  onChange={e => {
+    const value = e.target.value.replace(/[^\d.,]/g, ''); // Remove caracteres não numéricos, exceto ponto e vírgula
+    setPreco(value);
+  }}
+/><br/>
+
+
+
+
 
                 <input
                     type="text"
@@ -61,8 +73,8 @@ export default function Cadastro() {
                 <input
                     type="text"
                     placeholder='Imagem:'
-                    nome="img"
-                    onChange={e => setImg(e.target.value)}
+                    nome="imagem"
+                    onChange={e => setimagem(e.target.value)}
                 /><br/>
                 <button type='submit'>Cadastrar</button>
                 <div>
