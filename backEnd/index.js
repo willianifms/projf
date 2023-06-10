@@ -52,6 +52,17 @@ app.delete('/produtos', async function(req, res){
   }
 });
 
+app.post('/produto', async function(req, res){
+  try {
+    console.log(req.body.id)
+    var produto = await Produto.update(produto);
+    res.json(produto.rows);
+  } catch (error) {
+    console.error('Erro ao atualizar produto:', error);
+    res.status(500).json({ error: 'Ocorreu um erro ao atualizar produto' });
+  }
+});
+
 
 app.listen(3003, function() {
   console.log(`app de Exemplo escutando na porta! ${3003}`)
