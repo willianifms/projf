@@ -5,14 +5,27 @@ html, body{
 }
 
 .cadastro{
-  padding: 10px;
+  margin: auto;
+  padding: auto;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between ;
   background-color: #000051;
-  padding-left: 10px;
-  padding-right: 10px;
 
 }
 
+
+
+.produtos{
+  
+  display: grid;
+justify-self: center;
+place-items: center;
+  grid-template-columns: auto auto auto auto;
+
+}
+
+.produto{
+  margin-top: 5%;
+}
