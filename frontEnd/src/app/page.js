@@ -22,10 +22,10 @@ export default async function Home() {
       <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
       </div>
 
-<section >
+
   <div className='produtos'>
       {produtos.map(produtos => (
-        <div key={produtos.id}>
+        <div className='produto' key={produtos.id}>
             <p>{produtos.titulo}</p>
             <p>{formatarData(produtos.data_cadastro).slice(0, 10)}</p>
             <p>R$ {produtos.preco}</p>
@@ -35,7 +35,7 @@ export default async function Home() {
         </div>
       ))}
       </div>
-      </section>
+      
     </main>
   )
 }
