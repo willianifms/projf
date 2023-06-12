@@ -1,6 +1,8 @@
 "use client"
 import Link from 'next/link';
 import './home.css'
+import { format, parseISO } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR';
 
 export default async function Home() {
 
@@ -9,6 +11,9 @@ export default async function Home() {
   });
   const produtos = await req.json();
 
+  const formatarData = (date) => {
+  return format(parseISO(date), "dd/MM/yyyy HH:mm", { locale: ptBR })
+}
 
   return (
     <main> 
@@ -22,7 +27,7 @@ export default async function Home() {
       {produtos.map(produtos => (
         <div key={produtos.id}>
             <p>{produtos.titulo}</p>
-            <p>{produtos.data_cadastro}</p>
+            <p>{formatarData(produtos.data_cadastro).slice(0, 10)}</p>
             <p>R$ {produtos.preco}</p>
             <p>{produtos.descricao}</p>
             <p>{produtos.img}</p>
