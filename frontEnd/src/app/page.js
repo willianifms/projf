@@ -16,11 +16,10 @@ export default async function Home() {
         <div key={produtos.id}>
             <p>{produtos.titulo}</p>
             <p>{produtos.data_cadastro}</p>
-            <p>{produtos.preco}</p>
+            <p>R$ {produtos.preco}</p>
             <p>{produtos.descricao}</p>
             <p>{produtos.img}</p>
           <Link href={`/produto/${produtos.id}`}>ver mais</Link>
-          
         </div>
       ))}
     </main>
