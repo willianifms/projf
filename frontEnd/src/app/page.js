@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link';
+import './home.css'
 
 export default async function Home() {
 
@@ -10,7 +11,12 @@ export default async function Home() {
 
 
   return (
-    <main> <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
+    <main> 
+      <div className='cadastro'>
+        <p>MultCoisas</p>
+      <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
+      </div>
+
 
       {produtos.map(produtos => (
         <div key={produtos.id}>
