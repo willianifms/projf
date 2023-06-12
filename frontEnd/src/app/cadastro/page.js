@@ -9,7 +9,7 @@ export default function Cadastro() {
     const [data_cadastro, setData_cadastro] = useState();
     const [preco, setPreco] = useState();
     const [descricao, setDescricao] = useState();
-    const [imagem, setimagem] = useState();
+    const [imagem, setimagem] = useState("");
 
     const cadastrar = (e) => {
         e.preventDefault()
@@ -58,11 +58,6 @@ export default function Cadastro() {
     setPreco(value);
   }}
 /><br/>
-
-
-
-
-
                 <input
                     type="text"
                     placeholder='Descrição:'
