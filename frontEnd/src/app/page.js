@@ -17,7 +17,8 @@ export default async function Home() {
       <Link href="/cadastro" className='voltar'> CADASTRAR </Link>
       </div>
 
-
+<section >
+  <div className='produtos'>
       {produtos.map(produtos => (
         <div key={produtos.id}>
             <p>{produtos.titulo}</p>
@@ -28,6 +29,8 @@ export default async function Home() {
           <Link href={`/produto/${produtos.id}`}>ver mais</Link>
         </div>
       ))}
+      </div>
+      </section>
     </main>
   )
 }
