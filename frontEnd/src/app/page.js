@@ -24,16 +24,20 @@ export default async function Home() {
 
 
   <div className='produtos'>
-      {produtos.map(produtos => (
-        <div className='produto' key={produtos.id}>
-            <p>{produtos.titulo}</p>
-            <p>{formatarData(produtos.data_cadastro).slice(0, 10)}</p>
-            <p>R$ {produtos.preco}</p>
-            <p>{produtos.descricao}</p>
-            <p>{produtos.img}</p>
-          <Link href={`/produto/${produtos.id}`}>ver mais</Link>
-        </div>
-      ))}
+  {produtos.map(produtos => (
+    <div className='produto' key={produtos.id}>
+      <div className='produto-imagem'>
+        <img src={produtos.img} alt={produtos.titulo} />
+      </div>
+      <div className='produto-conteudo'>
+        <p>{produtos.titulo}</p>
+        <p>{formatarData(produtos.data_cadastro).slice(0, 10)}</p>
+        <p>R$ {produtos.preco}</p>
+        <p>{produtos.descricao}</p>
+        <Link href={`/produto/${produtos.id}`}>ver mais</Link>
+      </div>
+    </div>
+  ))}
       </div>
       
     </main>
