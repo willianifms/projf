@@ -37,9 +37,9 @@ class Produto {
   static async update(id, data) {
     try {
       const connect = await db.connect();
-      const sql = "";
+      const sql = "UPDATE produtos WHERE id=$1";
       const values = [data.titulo, data.data_cadastro, data.preco, data.descricao,data.imagem, id];
-      return await connect.query(sql, values);
+      return await connect.query(sql, [id]);
     } catch (error) {
       console.error('Erro em update:', error);
       throw error;

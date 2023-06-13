@@ -32,14 +32,13 @@ export default async function Produto({ params }) {
         }
     }
 
-
     return (
         <div>
             <p>{produto.titulo}</p>
             <p>{produto.data_cadastro}</p>
             <p>{produto.preco}</p>
             <p>{produto.descricao}</p>
-            <p>{produto.img}</p>
+            <p>{produto.imagem}</p>
             <button onClick={remover}>Excluir</button>
             <a href="../">Voltar</a>
         </div>

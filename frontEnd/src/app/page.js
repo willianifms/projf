@@ -40,11 +40,10 @@ export default async function Home() {
 
 
   <div className='produtos'>
-<<<<<<< HEAD
   {produtos.map(produtos => (
     <div className='produto' key={produtos.id}>
       <div className='produto-imagem'>
-        <img src={produtos.img} alt={produtos.titulo} />
+        <img src={produtos.imagem} alt={produtos.titulo} />
       </div>
       <div className='produto-conteudo'>
         <p>{produtos.titulo}</p>
@@ -52,22 +51,10 @@ export default async function Home() {
         <p>R$ {produtos.preco}</p>
         <p>{produtos.descricao}</p>
         <Link href={`/produto/${produtos.id}`}>ver mais</Link>
+        <button onClick={() => remover(produtos.id)}>excluir</button>
       </div>
     </div>
   ))}
-=======
-      {produtos.map(produtos => (
-        <div className='produto' key={produtos.id}>
-            <p>{produtos.titulo}</p>
-            <p>{formatarData(produtos.data_cadastro).slice(0, 10)}</p>
-            <p>R$ {produtos.preco}</p>
-            <p>{produtos.descricao}</p>
-            <p>{produtos.img}</p>
-          <Link href={`/produto/${produtos.id}`}>ver mais</Link>
-          <button onClick={() => remover(produtos.id)}>excluir</button>
-        </div>
-      ))}
->>>>>>> 2fb98890099bde0f68ed04b7794d5df4ab6b3e8d
       </div>
       
     </main>

@@ -47,15 +47,15 @@ app.delete('/produtos', async function(req, res){
     var produto = await Produto.delete(req.body.id);
     res.json(produto.rows);
   } catch (error) {
-    console.error('Erro ao atualizar produto:', error);
-    res.status(500).json({ error: 'Ocorreu um erro ao atualizar produto' });
+    console.error('Erro ao excluir produto:', error);
+    res.status(500).json({ error: 'Ocorreu um erro ao excluir produto' });
   }
 });
 
-app.post('/produto', async function(req, res){
+app.post('/produtos', async function(req, res){
   try {
     console.log(req.body.id)
-    var produto = await Produto.update(produto);
+    var produto = await Produto.update(req.body.id);
     res.json(produto.rows);
   } catch (error) {
     console.error('Erro ao atualizar produto:', error);
