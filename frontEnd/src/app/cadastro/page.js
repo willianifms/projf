@@ -9,7 +9,7 @@ export default function Cadastro() {
   const [data_cadastro, setData_cadastro] = useState();
   const [preco, setPreco] = useState();
   const [descricao, setDescricao] = useState();
-  const [imagem, setimagem] = useState("");
+  const [imagem, setImagem] = useState("");
 
   const cadastrar = (e) => {
     e.preventDefault();
@@ -35,56 +35,61 @@ export default function Cadastro() {
 
   return (
     <div className={styles.main}>
-      <form onSubmit={cadastrar}>
-        <input
-          type="text"
-          placeholder="titulo:"
-          nome="titulo"
-          onChange={(e) => setTitulo(e.target.value)}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="Data:"
-          name="data_cadastro"
-          onChange={(e) => {
-            const value = e.target.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-            setData_cadastro(value);
-          }}
-        />
-        <br />
+<h1>Cadastro de produtos</h1>
 
-        <input
-          type="text"
-          placeholder="Preço:"
-          name="preco"
-          pattern="^\d+(.|,)?\d{0,2}$"
-          onChange={(e) => {
-            const value = e.target.value.replace(/[^\d.,]/g, ""); // Remove caracteres não numéricos, exceto ponto e vírgula
-            setPreco(value);
-          }}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="Descrição:"
-          nome="descricao"
-          onChange={(e) => setDescricao(e.target.value)}
-        />
-        <br />
-
-        <input
-          type="text"
-          placeholder="Imagem:"
-          nome="imagem"
-          onChange={(e) => setimagem(e.target.value)}
-        />
-        <br />
-        <button type="submit">Cadastrar</button>
-        <div>
-          <a href="/">Voltar</a>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={cadastrar}>
+      <input
+        type="text"
+        placeholder="Título:"
+        name="titulo"
+        className={styles.formInput}
+        onChange={(e) => setTitulo(e.target.value)}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="Data:"
+        name="data_cadastro"
+        className={styles.formInput}
+        onChange={(e) => {
+          const value = e.target.value.replace(/\D/g, "");
+          setData_cadastro(value);
+        }}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="Preço:"
+        name="preco"
+        pattern="^\d+(.|,)?\d{0,2}$"
+        className={styles.formInput}
+        onChange={(e) => {
+          const value = e.target.value.replace(/[^\d.,]/g, "");
+          setPreco(value);
+        }}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="Descrição:"
+        name="descricao"
+        className={styles.formInput}
+        onChange={(e) => setDescricao(e.target.value)}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="Imagem:"
+        name="imagem"
+        className={styles.formInput}
+        onChange={(e) => setImagem(e.target.value)}
+      />
+      <br />
+      <button type="submit" className={styles.formButton}>Cadastrar</button>
+      <div>
+        <a href="/" className={styles.formLink}>Voltar</a>
+      </div>
+    </form>
+  </div>
   );
 }

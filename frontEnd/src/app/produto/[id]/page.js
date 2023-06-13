@@ -1,5 +1,5 @@
 'use client'
-
+import '../produto.css';
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -33,15 +33,17 @@ export default async function Produto({ params }) {
     }
 
     return (
-        <div>
-            <p>{produto.titulo}</p>
-            <p>{produto.data_cadastro}</p>
-            <p>{produto.preco}</p>
-            <p>{produto.descricao}</p>
-            <p>{produto.imagem}</p>
-            <button onClick={remover}>Excluir</button>
-            <a href="../">Voltar</a>
-        </div>
-
+        <div class="product">
+            <img class="product-image" src={produto.imagem} alt={produto.titulo}/>
+        <h1 class="product-title">{produto.titulo}</h1>
+        <p class="product-date">{produto.data_cadastro}</p>
+        <p class="product-price">{produto.preco}</p>
+        <p class="product-description">{produto.descricao}</p>
+        
+        <button class="product-button" onClick={remover}>Excluir</button>
+        <a class="product-link" href="../">Voltar</a>
+    </div>
+    
+      
     )
 }

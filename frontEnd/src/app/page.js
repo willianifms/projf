@@ -39,23 +39,24 @@ export default async function Home() {
       </div>
 
 
-  <div className='produtos'>
+      <div className='produto'>
   {produtos.map(produtos => (
-    <div className='produto' key={produtos.id}>
+    <div className='produto-card' key={produtos.id}>
       <div className='produto-imagem'>
-        <img src={produtos.imagem} alt={produtos.titulo} />
+        <img className='imagem-produto' src={produtos.imagem} alt={produtos.titulo} />
       </div>
       <div className='produto-conteudo'>
-        <p>{produtos.titulo}</p>
-        <p>{formatarData(produtos.data_cadastro).slice(0, 10)}</p>
-        <p>R$ {produtos.preco}</p>
-        <p>{produtos.descricao}</p>
-        <Link href={`/produto/${produtos.id}`}>ver mais</Link>
-        <button onClick={() => remover(produtos.id)}>excluir</button>
+        <h3 className='produto-titulo'>{produtos.titulo}</h3>
+        <p className='produto-data'>{formatarData(produtos.data_cadastro).slice(0, 10)}</p>
+        <p className='produto-preco'>R$ {produtos.preco}</p>
+        <p className='produto-descricao'>{produtos.descricao}</p>
+        <Link href={`/produto/${produtos.id}`} className='ver-mais-link'>ver mais</Link>
+        <button onClick={() => remover(produtos.id)} className='excluir-button'>excluir</button>
       </div>
     </div>
   ))}
-      </div>
+</div>
+
       
     </main>
   )
