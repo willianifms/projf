@@ -9,6 +9,10 @@ export default async function Produto({ params }) {
 
     const idJson = JSON.stringify(id);
 
+    const formatarData = (date) => {
+        return format(parseISO(date), "dd/MM/yyyy HH:mm", { locale: ptBR })
+    }
+
     const req = await fetch("http://localhost:3003/produtos", {
         method: "POST",
         cache: "no-cache",
@@ -33,16 +37,16 @@ export default async function Produto({ params }) {
     }
 
     return (
-        <div class="product">
-            <img class="product-image" src={produto.imagem} alt={produto.titulo}/>
-        <h1 class="product-title">{produto.titulo}</h1>
-        <p class="product-date">{produto.data_cadastro}</p>
-        <p class="product-price">{produto.preco}</p>
-        <p class="product-description">{produto.descricao}</p>
+        <div className="product">
+            <img className="product-image" src={produto.imagem} alt={produto.titulo}/>
+            <h1 className="product-title">{produto.titulo}</h1>
+            <p className="product-date">{formatarData(produto.data_cadastro).slice(0, 10)}</p>
+            <p className="product-price">{produto.preco}</p>
+            <p className="product-description">{produto.descricao}</p>
         
-        <button class="product-button" onClick={remover}>Excluir</button>
-        <a class="product-link" href="../">Voltar</a>
-    </div>
+            <button className="product-button" onClick={remover}>Excluir</button>
+            <a className="product-link" href="../">Voltar</a>
+        </div>
     
       
     )
