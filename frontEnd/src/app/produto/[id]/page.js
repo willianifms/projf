@@ -2,6 +2,8 @@
 import '../produto.css';
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { format, parseISO } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR';
 
 export default async function Produto({ params }) {
     const router = useRouter();
