@@ -51,6 +51,7 @@ export default async function Home() {
         <p className='produto-preco'>R$ {produtos.preco}</p>
         <p className='produto-descricao'>{produtos.descricao}</p>
         <Link href={`/produto/${produtos.id}`} className='ver-mais-link'>ver mais</Link>
+        <Link href={`/alterar/${produtos.id}`}  className='ver-mais-link'>alterar</Link>
         <button onClick={() => remover(produtos.id)} className='excluir-button'>excluir</button>
       </div>
     </div>
