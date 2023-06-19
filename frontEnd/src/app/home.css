@@ -2,6 +2,7 @@ html, body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: #cacfef;
 }
 
 .cadastro {
@@ -33,7 +34,12 @@ html, body{
 }
 
 
-
+.socorro
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .produto {
   display: flex;
@@ -45,7 +51,7 @@ html, body{
   margin-top: 1%;
   width: 300px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #acabab;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -101,7 +107,7 @@ html, body{
 .excluir-button {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #d9534f;
+  background-color: #0f086e;
   color: #fff;
   text-decoration: none;
   border-radius: 3px;

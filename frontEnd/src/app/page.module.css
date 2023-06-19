@@ -4,9 +4,8 @@
   padding: 20px;
   background-color: #3e20dc;
   border-radius: 4px;
-  
+  align-content: center;
 }
-
 .formInput {
   width: 90%;
   padding: 10px;
@@ -14,6 +13,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 
 .formButton {
   background-color: #000049;

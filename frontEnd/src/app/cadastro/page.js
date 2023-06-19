@@ -35,9 +35,9 @@ export default function Cadastro() {
 
   return (
     <div className={styles.main}>
-<h1>Cadastro de produtos</h1>
+      <h1>Cadastro de produtos</h1>
 
-    <form onSubmit={cadastrar}>
+      <form onSubmit={cadastrar}>
       <input
         type="text"
         placeholder="Título:"
@@ -85,10 +85,7 @@ export default function Cadastro() {
         onChange={(e) => setImagem(e.target.value)}
       />
       <br />
-      <button type="submit" className={styles.formButton}>Cadastrar</button>
-      <div>
-        <a href="/" className={styles.formLink}>Voltar</a>
-      </div>
+      <button type="submit" className={styles.formButton}>Cadastrar</button> <a href="/" className={styles.formLink}>Voltar</a>
     </form>
   </div>
   );
