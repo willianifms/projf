@@ -1,5 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
+import styles from "./alterar.module.css";
 import Link from "next/link";
 import { format, parseISO } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR';
@@ -59,10 +60,11 @@ const [novaImagem, setNovaImagem] = useState("");
     }
   };
   return (
-    <div>
+    <div className={styles.main}>
       <h1>Editar Atividade</h1>
       <form onSubmit={alterar}>
         <input
+        className={styles.formInput}
           type="text"
           placeholder="Título"
           name="titulo"
@@ -71,6 +73,7 @@ const [novaImagem, setNovaImagem] = useState("");
         />
         <br />
         <input
+        className={styles.formInput}
           type="text"
           placeholder="Data"
           name="data_cadastro"
@@ -79,6 +82,7 @@ const [novaImagem, setNovaImagem] = useState("");
         />
         <br />
         <input
+        className={styles.formInput}
           type="text"
           placeholder="Preço"
           name="preco"
@@ -88,6 +92,7 @@ const [novaImagem, setNovaImagem] = useState("");
         />
         <br />
         <input
+        className={styles.formInput}
           type="text"
           placeholder="Descrição"
           name="descricao"
@@ -96,6 +101,7 @@ const [novaImagem, setNovaImagem] = useState("");
         />
         <br />
         <input
+        className={styles.formInput}
           type="text"
           placeholder="Imagem"
           name="imagem"
@@ -103,9 +109,9 @@ const [novaImagem, setNovaImagem] = useState("");
           onChange={(e) => setNovaImagem(e.target.value)}
         />
         <br />
-        <button type="submit">Salvar</button>
+        <button type="submit" className={styles.formButton}>Salvar</button>
         <div>
-          <a href="/">Voltar</a>
+          <a href="/" className={styles.formLink}>Voltar</a>
         </div>
       </form>
     </div>
