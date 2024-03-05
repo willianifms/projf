@@ -36,6 +36,7 @@ html, body{
 
 .socorro
 {
+  margin-top: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,6 +71,7 @@ html, body{
 
 .produto-conteudo {
   padding: 10px;
+  height: 350px;
 }
 
 .produto-titulo {
