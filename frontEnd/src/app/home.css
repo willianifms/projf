@@ -2,7 +2,8 @@ html, body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #cacfef;
+  background-color: #ffd987;
+  font-family: 'Open Sans';
 }
 
 .cadastro {
@@ -10,19 +11,21 @@ html, body{
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #000049;
+  font-size: 30px;
+  background-color: #dc7729;
   color: #fff;
+  height: 60px;
 }
 
 .cadastro p {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   margin: 0;
 }
 
 .voltar {
   padding: 5px 10px;
-  background-color: #2e18b8;
+  background-color:#e59041;
   color: #fff;
   text-decoration: none;
   border-radius: 3px;
@@ -36,7 +39,7 @@ html, body{
 
 .socorro
 {
-  margin-top: 90%;
+margin-top: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,10 +74,12 @@ html, body{
 
 .produto-conteudo {
   padding: 10px;
-  height: 350px;
+  height: 200px;
 }
 
 .produto-titulo {
+  text-transform: capitalize;
+  height: 40px;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -97,23 +102,54 @@ html, body{
   margin-bottom: 10px;
 }
 
-.ver-mais-link {
-  display: inline-block;
+.ver-mais-linkV {
+  display:flex;
+  width: 70px;
+  height: 30px;
+  align-items: center;
+ justify-content: center;
+ text-transform: uppercase;
+ font-size: 13px;
   padding: 5px 10px;
-  background-color: #0f086e;
-  color: #fff;
+  background-color:#3eb02c;
+  color: #000;
   text-decoration: none;
   border-radius: 3px;
+  font-weight: bold;
+}
+
+.ver-mais-linkA {
+  display:flex;
+  width: 70px;
+  height: 30px;
+  align-items: center;
+ justify-content: center;
+ text-transform: uppercase;
+ font-size: 13px;
+  padding: 5px 10px;
+  background-color:#f5d633;
+  color: #000;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .excluir-button {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #0f086e;
-  color: #fff;
+  font-family: "Open Sans";
+  display:flex;
+  width: 90px;
+  height: 40px;
+  align-items: center;
+ justify-content: center;
+ text-transform: uppercase;
+ font-size: 13px;
+  padding: 5px 30px;
+  background-color:#f90818;
+  color: #000;
   text-decoration: none;
   border-radius: 3px;
-  margin-left: 10px;
+  border: none;
+  font-weight: bold;
 }
 
 .excluir-button:hover,
